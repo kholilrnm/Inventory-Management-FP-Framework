@@ -33,10 +33,22 @@ class core extends CI_Controller {
 
 	public function dashboard()
 	{
-		
+		$data = array(
+			'title' => "Dashboard Admin"
+		);
+		$this->load->view('templates/header.php', $data);
 		$this->load->view('dashboard/dashboard.php');
 		$this->load->view('include/main.php');
 	
+	}
+
+	public function viewStockItems()
+	{
+		$data = array(
+			'title' => "Stock Items"
+		);
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('dashboard/viewStockItems.php');	
 	}
 
 
