@@ -26,8 +26,10 @@ class core extends CI_Controller {
 
 	public function index()
 	{
-		
-		 $this->load->view('login');
+		$data = array(
+			'title' => "Login Dashboard"
+		);
+		 $this->load->view('login', $data);
 
 	}
 
@@ -37,8 +39,9 @@ class core extends CI_Controller {
 			'title' => "Dashboard Admin"
 		);
 		$this->load->view('templates/header.php', $data);
+		$this->load->view('templates/sidebar.php');
 		$this->load->view('dashboard/dashboard.php');
-		$this->load->view('include/main.php');
+		$this->load->view('templates/footer.php');
 	
 	}
 
@@ -48,7 +51,9 @@ class core extends CI_Controller {
 			'title' => "Stock Items"
 		);
 		$this->load->view('templates/header.php', $data);
-		$this->load->view('dashboard/viewStockItems.php');	
+		$this->load->view('templates/sidebar.php');
+		$this->load->view('dashboard/viewStockItems.php');
+		$this->load->view('templates/footer.php');
 	}
 
 
