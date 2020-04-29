@@ -21,10 +21,12 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>data/css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="<?php echo base_url(); ?>data/img/favicon.png?3">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
+  
   <body>
     <div class="page-holder d-flex align-items-center">
       <div class="container">
@@ -33,30 +35,125 @@
             <div class="pr-lg-5"><img src="<?php echo base_url(); ?>data/img/illustration.svg" alt="" class="img-fluid"></div>
           </div>
           <div class="col-lg-5 px-lg-4">
-            <h1 class="text-base text-primary text-uppercase mb-4">Bubbly Dashboard</h1>
+            <h1 class="text-base text-primary text-uppercase mb-4">Warehousing Dashboard</h1>
             <h2 class="mb-4">Welcome back!</h2>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            <form id="loginForm" action="index.html" class="mt-4">
-              <div class="form-group mb-4">
-                <input type="text" name="username" placeholder="Username or Email address" class="form-control border-0 shadow form-control-lg">
-              </div>
-              <div class="form-group mb-4">
-                <input type="password" name="passowrd" placeholder="Password" class="form-control border-0 shadow form-control-lg text-violet">
-              </div>
-              <div class="form-group mb-4">
-                <div class="custom-control custom-checkbox">
-                  <input id="customCheck1" type="checkbox" checked class="custom-control-input">
-                  <label for="customCheck1" class="custom-control-label">Remember Me</label>
+            <p class="text-muted">Selamat datang kembali, silahkan login terlebih dahulu untuk dapat memasuki system</p>
+
+             <hr>
+
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control border-0 shadow form-control-lg" id="username" placeholder="Masukkan Username">
                 </div>
-              </div>
-             <a href="#"> <button type="submit" class="btn btn-primary shadow px-5">Log in</button></a>
-             <a href="<?php echo base_url(); ?>core/dashboard">Masuk dasboard aja dulu</a>
-            </form>
+
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control border-0 shadow form-control-lg" id="password" placeholder="Masukkan Password">
+                </div>
+                
+                <button class="btn btn-login btn-block btn-primary">LOGIN</button>
+              
+            </div>
+          </div>
           </div>
         </div>
               
       </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        $(".btn-login").click( function() {
+        
+          var username = $("#username").val();
+          var password = $("#password").val();
+
+          if(username.length == "") {
+
+            Swal.fire({
+              type: 'warning',
+              title: 'Oops...',
+              text: 'Username Wajib Diisi !'
+            });
+
+          } else if(password.length == "") {
+
+            Swal.fire({
+              type: 'warning',
+              title: 'Oops...',
+              text: 'Password Wajib Diisi !'
+            });
+
+          } else {
+
+            $.ajax({
+
+              url: "<?php echo base_url() ?>login/auth",
+              type: "POST",
+              data: {
+                  "username": username,
+                  "password": password
+              },
+
+              success:function(response){
+
+                if (response == "success") {
+
+                  Swal.fire({
+                    type: 'success',
+                    title: 'Login Berhasil!',
+                    text: 'Anda akan diteruskan',
+                    timer: 2000,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                  })
+                  .then (function() {
+                    window.location.href = "<?php echo base_url() ?>core/dashboard";
+                  });
+
+                } else {
+
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Login Gagal!',
+                    text: 'silahkan coba lagi!'
+                  });
+
+
+                }
+
+                console.log(response);
+
+              },
+
+              error:function(response){
+
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Opps!',
+                    text: 'server error!'
+                  });
+
+                  console.log(response);
+
+              }
+
+            });
+
+          }
+
+        }); 
+
+      });
+    </script>
+
+
+
     <!-- JavaScript files-->
     <script src="<?php echo base_url(); ?>data/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>data/vendor/popper.js/umd/popper.min.js"> </script>
