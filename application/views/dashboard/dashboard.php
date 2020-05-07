@@ -7,7 +7,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-violet"></div>
                     <div class="text">
-                      <h6 class="mb-0">Data consumed</h6><span class="text-gray">145,14 GB</span>
+                      <h6 class="mb-0">Total Stock</h6><span class="text-gray"><?= 'a' ?></span>
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-server"></i></div>
@@ -18,7 +18,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-green"></div>
                     <div class="text">
-                      <h6 class="mb-0">Open cases</h6><span class="text-gray">32</span>
+                      <h6 class="mb-0">New Stock</h6><span class="text-gray">32</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-green"><i class="far fa-clipboard"></i></div>
@@ -29,7 +29,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Work orders</h6><span class="text-gray">400</span>
+                      <h6 class="mb-0">Stock Out</h6><span class="text-gray">400</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-dolly-flatbed"></i></div>
@@ -40,7 +40,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
                     <div class="text">
-                      <h6 class="mb-0">New invoices</h6><span class="text-gray">123</span>
+                      <h6 class="mb-0">Suppliers</h6><span class="text-gray">5</span>
                     </div>
                   </div>
                   <div class="icon text-white bg-red"><i class="fas fa-receipt"></i></div>
@@ -48,88 +48,47 @@
               </div>
             </div>
           </section>
+
+
           <section>
             <div class="row mb-4">
-              <div class="col-lg-7 mb-4 mb-lg-0">
+              <div class="col-lg-12 mb-4 mb-lg-0">
                 <div class="card">
                   <div class="card-header">
-                    <h2 class="h6 text-uppercase mb-0">Current server uptime</h2>
+                    <h2 class="h6 text-uppercase mb-0">Chart Stock Furniture</h2>
                   </div>
                   <div class="card-body">
-                    <p class="text-gray mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
-                      <div class="left d-flex align-items-center">
-                        <div class="icon icon-lg shadow mr-3 text-gray"><i class="fab fa-dropbox"></i></div>
-                        <div class="text">
-                          <h6 class="mb-0 d-flex align-items-center"> <span>Dropbox Inc.</span><span class="dot dot-sm ml-2 bg-violet"></span></h6><small class="text-gray">Account renewal</small>
-                        </div>
-                      </div>
-                      <div class="right ml-5 ml-sm-0 pl-3 pl-sm-0 text-violet">
-                        <h5>-$20</h5>
-                      </div>
+                  
+                    <div class="container">
+                      <canvas id="myChart"></canvas>
                     </div>
-                    <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
-                      <div class="left d-flex align-items-center">
-                        <div class="icon icon-lg shadow mr-3 text-gray"><i class="fab fa-apple"></i></div>
-                        <div class="text">
-                          <h6 class="mb-0 d-flex align-items-center"> <span>App Store.</span><span class="dot dot-sm ml-2 bg-green"></span></h6><small class="text-gray">Software cost</small>
-                        </div>
-                      </div>
-                      <div class="right ml-5 ml-sm-0 pl-3 pl-sm-0 text-green">
-                        <h5>-$20</h5>
-                      </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
-                      <div class="left d-flex align-items-center">
-                        <div class="icon icon-lg shadow mr-3 text-gray"><i class="fas fa-shopping-basket"></i></div>
-                        <div class="text">
-                          <h6 class="mb-0 d-flex align-items-center"> <span>Supermarket.</span><span class="dot dot-sm ml-2 bg-blue"></span></h6><small class="text-gray">Shopping</small>
-                        </div>
-                      </div>
-                      <div class="right ml-5 ml-sm-0 pl-3 pl-sm-0 text-blue">
-                        <h5>-$20</h5>
-                      </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
-                      <div class="left d-flex align-items-center">
-                        <div class="icon icon-lg shadow mr-3 text-gray"><i class="fab fa-android"></i></div>
-                        <div class="text">
-                          <h6 class="mb-0 d-flex align-items-center"> <span>Play Store.</span><span class="dot dot-sm ml-2 bg-red"></span></h6><small class="text-gray">Software cost</small>
-                        </div>
-                      </div>
-                      <div class="right ml-5 ml-sm-0 pl-3 pl-sm-0 text-red">
-                        <h5>-$20</h5>
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
               </div>
-              <div class="col-lg-5 mb-4 mb-lg-0 pl-lg-0">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="row align-items-center flex-row">
-                      <div class="col-lg-5">
-                        <h2 class="mb-0 d-flex align-items-center"><span>86.4</span><span class="dot bg-green d-inline-block ml-3"></span></h2><span class="text-muted text-uppercase small">Work hours</span>
-                        <hr><small class="text-muted">Lorem ipsum dolor sit</small>
-                      </div>
-                      <div class="col-lg-7">
-                        <canvas id="pieChartHome1"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row align-items-center flex-row">
-                      <div class="col-lg-5">
-                        <h2 class="mb-0 d-flex align-items-center"><span>1.724</span><span class="dot bg-violet d-inline-block ml-3"></span></h2><span class="text-muted text-uppercase small">Server time</span>
-                        <hr><small class="text-muted">Lorem ipsum dolor sit</small>
-                      </div>
-                      <div class="col-lg-7">
-                        <canvas id="pieChartHome2"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </section>
+
+
+      </div>
+        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-left text-primary">
+                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
+              </div>
+              <div class="col-md-6 text-center text-md-right text-gray-400">
+                <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>
+                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
               </div>
             </div>
+          </div>
+        </footer>
+      </div>
+        
+
+
+</div>
+
+<?php  
+include "chartStock.php";
+?>

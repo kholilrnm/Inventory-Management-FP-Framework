@@ -1,4 +1,9 @@
     <!-- JavaScript files-->
+
+    <!-- // Chart JS -->
+
+
+
     <script src="<?= base_url();?>data/vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url();?>data/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?= base_url();?>data/vendor/popper.js/umd/popper.min.js"> </script>

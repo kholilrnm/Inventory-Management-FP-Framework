@@ -40,18 +40,22 @@ class operasi extends CI_Controller {
 
         if ($this->form_validation->run() === true) {  // Cek validasi, return true jika lolos validasi
             
-            $data["tipeBarang"] = $this->input->post("type");
-            $data["namaBarang"] = $this->input->post("nama");
-            $data["asalBarang"] = $this->input->post("asal");
-            $data["jumlahBarang"] = $this->input->post("jumlah");
-            $data["tanggalInput"] = $this->input->post("tanggal");
+            $data = array(
+                'tipeBarang'    => $this->input->post("type"),
+                'namaBarang'    => $this->input->post("nama"),
+                'asalBarang'    => $this->input->post("asal"),
+                'jumlahBarang'  => $this->input->post("jumlah"),
+                'tanggalInput'  => $this->input->post("tanggal")
+            );
 
             // Konfigurasi upload file
-            $config['upload_path']          = './uploads/';
-            $config['allowed_types']        = 'gif|jpg|png|jpeg';
-            $config['max_size']             = 0;
-            $config['max_width']            = 0;
-            $config['max_height']           = 0;
+            $config = array(
+                'upload_path'   => './uploads/',
+                'allowed_types' => 'gif|jpg|png|jpeg',
+                'max_size'      => 0,
+                'max_width'     => 0,
+                'max_height'    => 0
+            );
 
             $this->load->library('upload', $config);    // Load library upload & pasang config
 
