@@ -33,17 +33,6 @@ class core extends CI_Controller {
 		 $this->load->view('login', $data);
 
 	}
-	public function tes()
-	{
-		$data = array(
-			'title' => "Dashboard Admin"
-		);
-		$this->load->view('templates/header.php', $data);
-		$this->load->view('templates/sidebar.php');
-		$this->load->view('dashboard/tes.php');
-		$this->load->view('templates/footer.php');
-	
-	}
 
 	public function dashboard()
 	{
