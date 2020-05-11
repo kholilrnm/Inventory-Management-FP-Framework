@@ -39,7 +39,7 @@
               </div>
             </form>
           </li>
-          <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
+<!--           <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
             <div aria-labelledby="notifications" class="dropdown-menu"><a href="#" class="dropdown-item">
                 <div class="d-flex align-items-center">
                   <div class="icon icon-sm bg-violet text-white"><i class="fab fa-twitter"></i></div>
@@ -67,11 +67,11 @@
                 </div></a>
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
             </div>
-          </li>
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="<?= base_url();?>data/img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Mark Stephen</strong><small>Web Developer</small></a>
-              <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
-              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
+          </li> -->
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="<?= base_url();?>asset/profile.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Oni-Chan</strong><small>Web Developer</small></a>
+              <div class="dropdown-divider"></div><a href="<?= base_url();?>" class="dropdown-item">Laporkan Masalah</a>
+              <div class="dropdown-divider"></div><a href="<?= base_url();?>" class="dropdown-item">Logout</a>
             </div>
           </li>
         </ul>

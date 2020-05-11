@@ -11,62 +11,145 @@
                     <h6 class="text-uppercase mb-0">History Input Furniture</h6>
                   </div>
                   <div class="card-body">                           
-                    <table class="table table-striped table-hover card-text">
-                      <thead align="text-center">
-                        <tr>
-                        
-                          <th>Type Barang</th>
-                          <th>Nama Barang</th>
-                          <th>Jumlah Barang</th>
-                          <th>Tanggal Input</th>
-                          <th>Photo</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
+                  <table class="table table-bordered table-striped" id="mydata">
+                      <thead>
+                        <tr align="center">
+                          <td>Type Barang</td>
+                          <td>Nama Barang</td>
+                          <td>Total Barang</td>
+                          <td>Sisa Stock</td>
+                          <td>Asal Barang</td>
+                          <td>Tanggal Input</td>
+                          <td>Foto</td>
+                          <td>Edit</td>
+                          <td>Delete</td>
                         </tr>
-                        <?php foreach($data as $u){ ?>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td><?php echo $u->tipeBarang ?></td>
-                          <td><?php echo $u->namaBarang ?></td>
-                          <td><?php echo $u->jumlahBarang ?></td>
-                          <td><?php echo $u->tanggalInput ?></td>
-                          <td><img src="<?php echo base_url('uploads/'.$u->uploadFoto.'');?>" height="50px" width="50px"></td>
-                          <td>
-                            <form action="data_edit" method="post">
-                              <button class="btn btn-warning" type="sumbit" name="edit" value="<?php echo $u->id ?>" >Edit</button>
-                            </form>
-                          </td>
+                        <?php  
+                       foreach($data->result_array() as $i):
+
+                          $id=$i['id'];
+                          $tipeBarang=$i['tipeBarang'];
+                          $namaBarang=$i['namaBarang'];
+                          $asalBarang=$i['asalBarang'];
+                          $tanggalInput=$i['tanggalInput'];
+                          $jumlahBarang=$i['jumlahBarang'];
+                          $stock=$i['stock'];
+                          $uploadFoto=$i['uploadFoto']
+                          ?>
+
+                        <tr align="center">
+                         <td><?php echo $tipeBarang ?></td>
+                          <td><?php echo $namaBarang ?></td>
+                          <td><?php echo $jumlahBarang ?></td>
+                          <td><?php echo $stock ?></td>
+                          <td><?php echo $asalBarang ?></td>
+                          <td><?php echo $tanggalInput ?></td>
+                          <td><img src="<?php echo base_url('uploads/'.$uploadFoto.'');?>" height="50px" width="50px"></td>
+                          <td><a class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_edit<?php echo $id;?>"> Edit</a></td>
                           <td>
                             <form action="<?php echo base_url('operasi/delete') ?>" method="post">
-                               <button class="btn btn-danger" type="sumbit" name="hapus" value="<?php echo $u->id ?>" >Hapus</button>
+                               <button class="btn btn-danger" type="sumbit" name="hapus" value="<?php echo $id ?>" >Del</button>
                             </form>
                           </td>
                         </tr>
-                     </tbody>
-                     <?php } ?>
+                        <?php endforeach;?>
+                      </tbody>
                     </table>
+                    
                   </div>
+
+
+    
+
+    <!-- ============ MODAL EDIT BARANG =============== -->
+    <?php 
+        foreach($data->result_array() as $i):
+                          $id=$i['id'];
+                          $tipeBarang=$i['tipeBarang'];
+                          $namaBarang=$i['namaBarang'];
+                          $tanggalInput=$i['tanggalInput'];
+                          $jumlahBarang=$i['jumlahBarang'];
+                          $asalBarang=$i['asalBarang'];
+                          $uploadFoto=$i['uploadFoto']
+        ?>
+            <div class="modal fade" id="modal_edit<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+<<<<<<< HEAD
+                  <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
-              </div>
-            
+                <form class="form-horizontal" method="post" action="<?php echo base_url().'core/newsave'?>">
+                    <div class="modal-body">
+
+                      <div class="form-group">
+                            <label class="control-label col-xs-3" >Id</label>
+                            <div class="col-xs-8">
+                                <input name="id" value="<?php echo $id;?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Type Barang</label>
+                            <div class="col-xs-8">
+                                <input name="tipeBarang" value="<?php echo $tipeBarang;?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Nama Barang</label>
+                            <div class="col-xs-8">
+                                <input name="namaBarang" value="<?php echo $namaBarang;?>" class="form-control" type="text" placeholder="Nama Barang..." required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Tanggal Input</label>
+                            <div class="col-xs-8">
+                                <input name="tanggalInput" value="<?php echo $tanggalInput;?>" class="form-control" type="text" placeholder="Harga..." required readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Jumlah Barang</label>
+                            <div class="col-xs-8">
+                                <input name="jumlahBarang" value="<?php echo $jumlahBarang;?>" class="form-control" type="text" placeholder="Harga..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Asal Barang</label>
+                            <div class="col-xs-8">
+                                <input name="asalBarang" value="<?php echo $asalBarang;?>" class="form-control" type="text" placeholder="Harga..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Foto</label>
+                            <div class="col-xs-8" style="text-align: center;">
+                                <img src="<?php echo base_url('uploads/'.$uploadFoto.'');?>" height="50px" width="50px">
+                            
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                        <button class="btn btn-info">Update</button>
+                    </div>
+                </form>
+                </div>
+                </div>
             </div>
-          </section>
-        </div>
-        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
-              </div>
-              <div class="col-md-6 text-center text-md-right text-gray-400">
-                <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>
-                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
+
+        <?php endforeach;?>
+
 
 

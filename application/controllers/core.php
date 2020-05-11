@@ -33,26 +33,25 @@ class core extends CI_Controller {
 		 $this->load->view('login', $data);
 
 	}
-	public function tes()
-	{
-		$data = array(
-			'title' => "Dashboard Admin"
-		);
-		$this->load->view('templates/header.php', $data);
-		$this->load->view('templates/sidebar.php');
-		$this->load->view('dashboard/tes.php');
-		$this->load->view('templates/footer.php');
-	
-	}
 
 	public function dashboard()
 	{
 		$data = array(
-			'title' => "Dashboard Admin"
+			'title' 		=> "Dashboard Admin",
+			'total_stock' 	=> $this->main->hitung_totalStock(), // total stock
+			'curr_stock' 	=> $this->main->hitung_currStock(), // current types stock
+			'new_stock' 	=> $this->main->todayStock() // today stock (stock baru)
 		);
+		
+		$chartStock = array(
+			'meja' 		=> $this->main->chart_meja()
+			
+		);
+
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
-		$this->load->view('dashboard/dashboard.php');
+		$this->load->view('dashboard/dashboard.php', $data);
+		$this->load->view('dashboard/chartStock.php', $chartStock);
 		$this->load->view('templates/footer.php');
 	
 	}
@@ -97,13 +96,14 @@ class core extends CI_Controller {
 	public function editstock()
 	{
 		$view['data'] = $this->main->ambil_data()->result();
+		$x['data']=$this->main->show_barang();
 
 		$data = array(
 			'title' => "Edit Stock"
 		);
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
-		$this->load->view('dashboard/edit.php',$view);
+		$this->load->view('dashboard/edit.php',$x);
 		$this->load->view('templates/footer.php');
 	}
 
@@ -125,6 +125,147 @@ class core extends CI_Controller {
 		$this->load->view('templates/footer.php');
 	}
 
+	public function barangkeluar()
+
+	{
+		// $edit = $this->input->post('edit');
+		// $edit =$kirim;
+
+		$x['data']=$this->main->show_barang();
+		
+
+		$xxx['ambil']=$this->main->show_out_stock();
+
+		$view['data'] = $this->main->ambil_data()->result();
+
+		$data = array(
+			'title' => "Barang Keluar"
+		);
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('templates/sidebar.php');
+		$this->load->view('dashboard/barangkeluar',$x);
+		$this->load->view('templates/footer.php');
+	}
+
+	function newsave(){
+		$id=$this->input->post('id');
+		$namaBarang=$this->input->post('namaBarang');
+		$asalBarang=$this->input->post('asalBarang');
+		$jumlahBarang=$this->input->post('jumlahBarang');
+		$stock=$this->input->post('jumlahBarang');
+
+
+		echo "$asalBarang";
+		$this->main->edit_barang($namaBarang,$asalBarang,$jumlahBarang,$stock,$id);
+		redirect('core/editstock');
+	}
+
+	function out(){
+
+
+		$this->form_validation->set_rules("ambil", "ambil", "required");
+
+
+        if ($this->form_validation->run() === true) 
+        {  // Cek validasi, return true jika lolos validasi
+            
+            $data = array(
+                'tipeBarang'    => $this->input->post("tipeBarang"),
+                'namaBarang'    => $this->input->post("namaBarang"),
+                'jumlahBarang'  => $this->input->post("stock"),
+                'stock' 	    => $this->input->post("ambil"),
+                'tanggalInput'  => $this->input->post("tanggalInput"),
+
+            );
+
+
+            $id = $this->main->inserthistory($data);
+        }
+
+
+
+		$id=$this->input->post('id');
+		$sisastock=$this->input->post('stock');
+		$ambil=$this->input->post('ambil');
+<<<<<<< HEAD
+
+		if ($ambil>$sisastock) {
+			echo "data tidak masuk akal";
+		
+		}
+		else{
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+		$stock=$sisastock-$ambil;
+
+		$this->main->penguranganstock($stock,$id);
+		redirect('core/barangkeluar');
+<<<<<<< HEAD
+
+		}
+
+
+		
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+	}
+
+	public function data_barang_keluar()
+
+	{
+		$this->form_validation->set_rules("ambil", "ambil", "required");
+
+
+        if ($this->form_validation->run() === true) 
+        {  // Cek validasi, return true jika lolos validasi
+            
+            $data = array(
+                'tipeBarang'    => $this->input->post("tipeBarang"),
+                'namaBarang'    => $this->input->post("namaBarang"),
+                'jumlahBarang'  => $this->input->post("stock"),
+                'stock' 	    => $this->input->post("ambil"),
+                'tanggalInput'  => $this->input->post("tanggalInput"),
+
+            );
+
+
+            $id = $this->main->inserthistory($data);
+        }
+
+		$xxx['data']=$this->main->show_out_stock();
+		$data = array(
+			'title' => "Barang Keluar"
+		);
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('templates/sidebar.php');
+		$this->load->view('input/data-stock.php',$xxx);
+		$this->load->view('templates/footer.php');
+	}
+
+	// public function add_history()
+
+	// {
+	// 	$this->form_validation->set_rules("ambil", "ambil", "required");
+
+
+ //        if ($this->form_validation->run() === true) 
+ //        {  // Cek validasi, return true jika lolos validasi
+            
+ //            $data = array(
+ //                'tipeBarang'    => $this->input->post("tipeBarang"),
+ //                'namaBarang'    => $this->input->post("namaBarang"),
+ //                'jumlahBarang'  => $this->input->post("stock"),
+ //                'stock' 	    => $this->input->post("ambil"),
+ //                'tanggalInput'  => $this->input->post("tanggalInput"),
+
+ //            );
+
+
+ //            $id = $this->main->inserthistory($data);
+ //        }
+ //        redirect('core/data_barang_keluar');
+
+	// }
 
 
 

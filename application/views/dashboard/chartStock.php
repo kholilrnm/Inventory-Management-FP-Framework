@@ -26,7 +26,7 @@
               borderColor: "rgba(54, 162, 235, 1)",
               borderWidth: 1,
               data: [
-                    4,7,2,3,4,1
+                    
 
                     ]
             },
@@ -36,7 +36,7 @@
               borderColor: "rgba(255, 206, 86, 1)",
               borderWidth: 1,
               data: [
-                    1,2,1,2,5,9
+                    
 
 
                     ]
@@ -47,7 +47,7 @@
               borderColor: "rgba(75, 192, 192, 1)",
               borderWidth: 1,
               data: [
-                    2,2,1,1,0,5
+                    
 
                     ]
             },
@@ -57,7 +57,7 @@
               borderColor: "rgba(153, 102, 255, 1)",
               borderWidth: 1,
               data: [
-                    2,3,4,1,2,0
+                    
 
                     ]
             },            {
@@ -66,7 +66,7 @@
               borderColor: "rgba(255, 159, 64, 1)",
               borderWidth: 1,
               data: [
-                    5,1,2,1,6,7
+                    
 
                     ]
             },
@@ -76,7 +76,7 @@
               borderColor: "rgba(160, 160, 160, 1)",
               borderWidth: 1,
               data: [
-                    9,1,6,4,5,7
+                    
 
                     ]
             },
@@ -86,7 +86,7 @@
               borderColor: "rgba(255, 0, 127, 1)",
               borderWidth: 1,
               data: [
-                    3,3,2,1,5,6
+                    
 
                     ]
             }]
