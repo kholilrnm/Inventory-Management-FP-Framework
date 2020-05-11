@@ -102,6 +102,10 @@ class main extends CI_Model {
         return $this->db->insert_id();  // return ID yang disimpan barusan
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d241c0413cfd94b40962c3aab5cb1953de0efdf8
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 =======
 >>>>>>> d241c0413cfd94b40962c3aab5cb1953de0efdf8
 >>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4

@@ -41,12 +41,21 @@ class core extends CI_Controller {
 			'total_stock' 	=> $this->main->hitung_totalStock(), // total stock
 			'curr_stock' 	=> $this->main->hitung_currStock(), // current types stock
 			'new_stock' 	=> $this->main->todayStock() // today stock (stock baru)
+<<<<<<< HEAD
 		);
 		
 		$chartStock = array(
 			'meja' 		=> $this->main->chart_meja()
 			
 		);
+=======
+		);
+		
+		$chartStock = array(
+			'meja' 		=> $this->main->chart_meja()
+			
+		);
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
@@ -188,6 +197,7 @@ class core extends CI_Controller {
 		$sisastock=$this->input->post('stock');
 		$ambil=$this->input->post('ambil');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		if ($ambil>$sisastock) {
 			echo "data tidak masuk akal";
@@ -196,16 +206,21 @@ class core extends CI_Controller {
 		else{
 =======
 >>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 		$stock=$sisastock-$ambil;
 
 		$this->main->penguranganstock($stock,$id);
 		redirect('core/barangkeluar');
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		}
 
 
 		
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 =======
 >>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 	}

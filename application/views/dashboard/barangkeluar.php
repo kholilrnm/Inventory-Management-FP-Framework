@@ -76,7 +76,10 @@
                 <div class="modal-content">
                 <div class="modal-header">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <h5 class="modal-title" id="exampleModalLabel">Ambil Barang</h5>
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 =======
 >>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -123,7 +126,11 @@
                             <label class="control-label col-xs-3" >Jumlah Barang Diambil</label>
                             <div class="col-xs-8">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input name="ambil" min="0"  class="form-control" max="<?php echo $stock;?>" type="number"  placeholder="Masukan Jumlah Barang" required>
+=======
+                                <input name="ambil"  class="form-control" max="<?php echo $stock;?>" type="number" placeholder="Masukan Jumlah Barang" required>
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
 =======
                                 <input name="ambil"  class="form-control" max="<?php echo $stock;?>" type="number" placeholder="Masukan Jumlah Barang" required>
 >>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
