@@ -18,7 +18,8 @@
                           <th>Type Barang</th>
                           <th>Nama Barang</th>
                           <th>Asal Barang</th>
-                          <th>Jumlah Barang</th>
+                          <th>Total Barang</th>
+                          <th>Stock Tersisa</th>
                           <th>Tanggal Input</th>
                           <th>Photo</th>
                         </tr>
@@ -30,6 +31,7 @@
                           <td><?php echo $u->namaBarang ?></td>
                           <td><?php echo $u->asalBarang ?></td>
                           <td><?php echo $u->jumlahBarang ?></td>
+                          <td><?php echo $u->stock ?></td>
                           <td><?php echo $u->tanggalInput ?></td>
                           <td><img src="<?php echo base_url('uploads/'.$u->uploadFoto.'');?>" height="50px" width="50px"></td>
                       

@@ -107,7 +107,7 @@
                   Swal.fire({
                     type: 'success',
                     title: 'Login Berhasil!',
-                    text: 'Anda akan diteruskan',
+                    text: 'Selamat Datang ONI - CHAN :)',
                     timer: 2000,
                     showCancelButton: false,
                     showConfirmButton: false
