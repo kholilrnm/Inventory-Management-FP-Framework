@@ -40,18 +40,20 @@ class core extends CI_Controller {
 			'title' 		=> "Dashboard Admin",
 			'total_stock' 	=> $this->main->hitung_totalStock(), // total stock
 			'curr_stock' 	=> $this->main->hitung_currStock(), // current types stock
-			'new_stock' 	=> $this->main->todayStock() // today stock (stock baru)
+			'new_stock' 	=> $this->main->new_stock(), // today stock (stock baru)
+			'out_stock' 	=> $this->main->out_stock() // today stock (stock keluar)
+
 		);
 		
-		$chartStock = array(
-			'meja' 		=> $this->main->chart_meja()
+		// $chartStock = array(
+		// 	'meja' 		=> $this->main->chart_meja()
 			
-		);
+		// );
 
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
 		$this->load->view('dashboard/dashboard.php', $data);
-		$this->load->view('dashboard/chartStock.php', $chartStock);
+		$this->load->view('dashboard/chartStock.php');
 		$this->load->view('templates/footer.php');
 	
 	}
@@ -187,10 +189,21 @@ class core extends CI_Controller {
 		$id=$this->input->post('id');
 		$sisastock=$this->input->post('stock');
 		$ambil=$this->input->post('ambil');
+
+		if ($ambil>$sisastock) {
+			echo "data tidak masuk akal";
+		
+		}
+		else{
 		$stock=$sisastock-$ambil;
 
 		$this->main->penguranganstock($stock,$id);
 		redirect('core/barangkeluar');
+
+		}
+
+
+		
 	}
 
 	public function data_barang_keluar()

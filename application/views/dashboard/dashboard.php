@@ -18,7 +18,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-green"></div>
                     <div class="text">
-                      <h6 class="mb-0">New Stock</h6><span class="text-gray"><?= print_r($new_stock) . ' [ '. date('d-m-yy') . ' ] '; ?></span>
+                      <h6 class="mb-0">New Stock</h6><span class="text-gray"><?= $new_stock . ' [ '. date('d-m-yy') . ' ] '; ?></span>
                     </div>
                   </div>
                   <div class="icon text-white bg-green"><i class="far fa-clipboard"></i></div>
@@ -29,7 +29,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-blue"></div>
                     <div class="text">
-                      <h6 class="mb-0">Stock Out</h6><span class="text-gray">400</span>
+                      <h6 class="mb-0">Stock Out</h6><span class="text-gray"><?= $out_stock . ' [ '. date('d-m-yy') . ' ] '; ?></span>
                     </div>
                   </div>
                   <div class="icon text-white bg-blue"><i class="fa fa-dolly-flatbed"></i></div>

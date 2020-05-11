@@ -21,43 +21,40 @@ class main extends CI_Model {
         return $query->num_rows();
     }
 
-    function todayStock(){
+    function new_stock() {
         $date = new DateTime("now");
         $curr_date = $date->format('yy-m-d');
 
-        $this->db->select('SUBSTRING(tanggalInput, 1, 10)');
-        $this->db->limit(1);
-        $query_substringTanggal = $this->db->get('stockbarang');
+        $query = $this->db->query('SELECT SUBSTRING(tanggalInput, 1, 10) AS tanggalInput FROM stockbarang ORDER BY tanggalInput DESC LIMIT 1');
 
-        return $query_substringTanggal->row();
-
-                
-        // return $query->row();
-        // $tes = '2020-05-11 08:51:31';
-        // var_dump($result);
-        // $date = new DateTime("now");
-        // $curr_date = $date->format('yy-m-d');
-
-        // // mengambil tanggal saja tanpa jam (date today)
-        // $substringTanggal = $this->db->query("SELECT SUBSTRING($curr_date, 1, 10) AS jumlahBarang");
-        // $result = $substringTanggal
-
-        // $this->db->select_sum('jumlahBarang');
-        // $this->db->where('tanggalInput', print_r($result));
-        // $query = $this->db->get('stockbarang');
-        // // $query = $this->db->query("SELECT jumlahBarang FROM stockbarang WHERE tanggalInput = '$substringTanggal'");
-
-        // if($query->num_rows() > 0) {
-        //     return $query->row()->jumlahBarang;
-        // }
-        // else {
-        //     return 0;
-        // }
-
+        $SubstringQuery = $query->row()->tanggalInput;
+        
+        if ($SubstringQuery == $curr_date) {
+            $this->db->select_sum('jumlahBarang');
+            $queryResult = $this->db->get('stockbarang');
+            return $queryResult->row()->jumlahBarang;
+    
+        } else {
+            return 0;
+        }
     }
+    
+    function out_stock() {
+        $date = new DateTime("now");
+        $curr_date = $date->format('yy-m-d');
 
-    function chart_meja(){
-        # code...
+        $query = $this->db->query('SELECT SUBSTRING(tanggalInput, 1, 10) AS tanggalInput FROM out_barang ORDER BY tanggalInput DESC LIMIT 1');
+
+        $SubstringQuery = $query->row()->tanggalInput;
+        
+        if ($SubstringQuery == $curr_date) {
+            $this->db->select_sum('stock');
+            $queryResult = $this->db->get('out_barang');
+            return $queryResult->row()->stock;
+    
+        } else {
+            return 0;
+        }        
     }
 
     // end dashboard
@@ -105,4 +102,13 @@ class main extends CI_Model {
 
         return $this->db->insert_id();  // return ID yang disimpan barusan
     }
+
+
+
+
+
+
+
+
+
 }

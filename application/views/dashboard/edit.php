@@ -78,6 +78,13 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+=======
+>>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'core/newsave'?>">
