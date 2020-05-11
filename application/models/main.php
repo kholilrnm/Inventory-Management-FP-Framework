@@ -4,11 +4,11 @@ class main extends CI_Model {
 
     // start dashboard
     function hitung_totalStock() {
-        $this->db->select_sum('jumlahBarang');
+        $this->db->select_sum('stock');
         $query = $this->db->get('stockbarang');
         
         if($query->num_rows() > 0) {
-            return $query->row()->jumlahBarang;
+            return $query->row()->stock;
         }
         else {
             return 0;
@@ -24,19 +24,35 @@ class main extends CI_Model {
     function todayStock(){
         $date = new DateTime("now");
         $curr_date = $date->format('yy-m-d');
-        
-        // echo $curr_date;
-        $this->db->select_sum('jumlahBarang');
-        $this->db->where('tanggalInput','2020-05-11');
-        $query = $this->db->get('stockbarang');
-        // $query = $this->db->query("SELECT jumlahBarang FROM stockbarang WHERE tanggalInput = '2020-05-11'");
 
-        if($query->num_rows() > 0) {
-            return $query->row()->jumlahBarang;
-        }
-        else {
-            return 0;
-        }
+        $this->db->select('SUBSTRING(tanggalInput, 1, 10)');
+        $this->db->limit(1);
+        $query_substringTanggal = $this->db->get('stockbarang');
+
+        return $query_substringTanggal->row();
+
+                
+        // return $query->row();
+        // $tes = '2020-05-11 08:51:31';
+        // var_dump($result);
+        // $date = new DateTime("now");
+        // $curr_date = $date->format('yy-m-d');
+
+        // // mengambil tanggal saja tanpa jam (date today)
+        // $substringTanggal = $this->db->query("SELECT SUBSTRING($curr_date, 1, 10) AS jumlahBarang");
+        // $result = $substringTanggal
+
+        // $this->db->select_sum('jumlahBarang');
+        // $this->db->where('tanggalInput', print_r($result));
+        // $query = $this->db->get('stockbarang');
+        // // $query = $this->db->query("SELECT jumlahBarang FROM stockbarang WHERE tanggalInput = '$substringTanggal'");
+
+        // if($query->num_rows() > 0) {
+        //     return $query->row()->jumlahBarang;
+        // }
+        // else {
+        //     return 0;
+        // }
 
     }
 
@@ -48,7 +64,7 @@ class main extends CI_Model {
 
 
 
-	public function insertdata($data) {
+	function insertdata($data) {
         // Param 1: nama table, param 2: data berupa assosiatif array
         $this->db->insert("stockbarang", $data);
 
@@ -59,23 +75,11 @@ class main extends CI_Model {
 		return $this->db->get('stockbarang');
 	}
 
-<<<<<<< HEAD
 	function hapus_barang($kode) {
         $hasil = $this->db->query("DELETE FROM stockbarang WHERE id='$kode'");
         return $hasil;
     }
 
-
-
-
-
-
-
-=======
-	function hapus_barang($kode){
-        $hasil=$this->db->query("DELETE FROM stockbarang WHERE id='$kode'");
-        return $hasil; 
-    }
     function show_barang(){
         $hasil=$this->db->query("SELECT * FROM stockbarang");
         return $hasil;
@@ -94,12 +98,11 @@ class main extends CI_Model {
         $hasil=$this->db->query("SELECT * FROM out_barang");
         return $hasil;
     }
-    public function inserthistory($data)
+    function inserthistory($data)
     {
         // Param 1: nama table, param 2: data berupa assosiatif array
         $this->db->insert("out_barang", $data);
 
         return $this->db->insert_id();  // return ID yang disimpan barusan
     }
->>>>>>> d241c0413cfd94b40962c3aab5cb1953de0efdf8
 }
