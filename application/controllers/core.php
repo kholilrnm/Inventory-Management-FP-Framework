@@ -37,11 +37,21 @@ class core extends CI_Controller {
 	public function dashboard()
 	{
 		$data = array(
-			'title' => "Dashboard Admin"
+			'title' 		=> "Dashboard Admin",
+			'total_stock' 	=> $this->main->hitung_totalStock(), // total stock
+			'curr_stock' 	=> $this->main->hitung_currStock(), // current types stock
+			'new_stock' 	=> $this->main->todayStock() // today stock (stock baru)
 		);
+		
+		$chartStock = array(
+			'meja' 		=> $this->main->chart_meja()
+			
+		);
+
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
-		$this->load->view('dashboard/dashboard.php');
+		$this->load->view('dashboard/dashboard.php', $data);
+		$this->load->view('dashboard/chartStock.php', $chartStock);
 		$this->load->view('templates/footer.php');
 	
 	}
