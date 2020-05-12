@@ -75,20 +75,15 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                   <h5 class="modal-title" id="exampleModalLabel">Ambil Barang</h5>
-=======
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
-=======
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'core/out'?>">
                     <div class="modal-body">
 
                       <div class="form-group">
-                            <label class="control-label col-xs-3" >Masukan Jumlah Barang yang Diambil</label>
                             <div class="col-xs-8" align="center">
                                 <input hidden="" name="id" value="<?php echo $id;?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
                                 <img  src="<?php echo base_url('uploads/'.$uploadFoto.'');?>" height="50px" width="50px">
@@ -96,6 +91,7 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="control-label col-xs-3" >Tanggal Barang Keluar</label>
                             <div class="col-xs-8">
                                 <input name="tanggalInput" value="<?php echo date ("Y/m/d")  ?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
                             </div>
@@ -125,15 +121,9 @@
                         <div class="form-group">
                             <label class="control-label col-xs-3" >Jumlah Barang Diambil</label>
                             <div class="col-xs-8">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <input name="ambil" min="0"  class="form-control" max="<?php echo $stock;?>" type="number"  placeholder="Masukan Jumlah Barang" required>
-=======
-                                <input name="ambil"  class="form-control" max="<?php echo $stock;?>" type="number" placeholder="Masukan Jumlah Barang" required>
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
-=======
-                                <input name="ambil"  class="form-control" max="<?php echo $stock;?>" type="number" placeholder="Masukan Jumlah Barang" required>
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+
+                                <input name="ambil" min="0" max="<?php echo $jumlahBarang; ?>" class="form-control" max="<?php echo $stock;?>" type="number"  placeholder="Masukan Jumlah Barang" required>
+
                             </div>
                         </div>
 

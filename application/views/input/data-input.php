@@ -16,9 +16,15 @@
                   <?= form_open_multipart('operasi/add') ?>
                   <div class="card-body">
                     <form class="form-horizontal">
+                       <div class="form-group row">
+                          <label class="col-md-3 form-control-label">ID Bulan</label>
+                          <div class="col-md-9">
+                          <input readonly="" name="bulan" value="<?php echo date("m")  ?> " class="form-control">
+                       </div>
+                       </div>
+                      
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Type Barang</label>
-
                         <div class="col-md-9 select mb-3">
                           <select name="type" class="form-control" >
                             <option>Meja</option>
@@ -32,36 +38,39 @@
                           </select>
                         </div>
                       </div>
+
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Nama Barang</label>
                         <div class="col-md-9">
-                          <input name="nama" type="text" placeholder="Masukan Nama" class="form-control">
+                          <input name="nama" type="text" placeholder="Masukan Nama" class="form-control" required="">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Asal Barang</label>
                         <div class="col-md-9">
-                          <input type="text" placeholder="Masukan Asal" name="asal" class="form-control">
+                          <input type="text" placeholder="Masukan Asal" name="asal" class="form-control" required="">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Jumlah Barang</label>
                         <div class="col-md-9">
-                          <input type="text" placeholder="Masukan Jumlah" name="jumlah" class="form-control">
+                          <input type="text" placeholder="Masukan Jumlah" name="jumlah" class="form-control" required="">
                         </div>
                       </div>
                       <div class="form-group row r" >
-                        <label class="col-md-3 form-control-label"   >Tanggal Input</label>
+                        <label class="col-md-3 form-control-label">Tanggal Input</label>
                         <div class="col-md-9">
-                          <input readonly="" name="tanggal" value="<?php echo date ("Y/m/d")  ?> " class="form-control">
+                          <input readonly="" name="tanggal" value="<?php echo date("Y/m/d")  ?> " class="form-control">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Upload Foto</label>
                         <div class="col-md-9">
-                          <?= form_upload("uploadFoto", set_value("uploadFoto"), "class='form-control'") ?>
+                          <?= form_upload("uploadFoto", set_value("uploadFoto"), "class='form-control'", "required=''") ?>
                         </div>
                       </div>
+
+
 
                       <div class="form-group row">
                         <div class="col-md-9 ml-auto">
