@@ -29,7 +29,7 @@
   <body>
     <!-- navbar-->
     <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="dashboard" class="sidebar-toogler font-weight-bold text-uppercase text-base" style="text-decoration: none;">Admin Dashboard</a>
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><img src="<?php echo base_url()?>asset/logoPTGudang.png" width="60px" height="60x"><a href="dashboard" class="sidebar-toogler font-weight-bold text-uppercase text-base" style="text-decoration: none;">Admin Dashboard</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">

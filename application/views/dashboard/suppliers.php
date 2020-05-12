@@ -98,9 +98,4 @@
             </div>
           </section>
         </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
+  
