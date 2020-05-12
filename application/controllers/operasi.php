@@ -34,7 +34,7 @@ class operasi extends CI_Controller {
         $this->form_validation->set_rules("nama", "nama", "required");
         $this->form_validation->set_rules("asal", "asal", "required");
         $this->form_validation->set_rules("jumlah", "jumlah", "required");
-        // $this->form_validation->set_rules("stock", "stock", "required");
+        $this->form_validation->set_rules("jumlah", "jumlah", "required");
         $this->form_validation->set_rules("tanggal", "tanggal", "required");
         // $this->form_validation->set_rules("content", "Konten", "required");
 
@@ -46,7 +46,7 @@ class operasi extends CI_Controller {
                 'namaBarang'    => $this->input->post("nama"),
                 'asalBarang'    => $this->input->post("asal"),
                 'jumlahBarang'  => $this->input->post("jumlah"),
-                // 'stock'         => $this->input->post("jumlah"),
+                'stock'         => $this->input->post("jumlah"),
                 'tanggalInput'  => $this->input->post("tanggal"),
                 'uploadFoto'    => $this->input->post("uploadFoto"),
                 'kodeBulan'         => $this->input->post("bulan")
@@ -73,7 +73,6 @@ class operasi extends CI_Controller {
 
             $id = $this->main->insertdata($data);
 
-            echo "success";
         }
 
         redirect('core/data_input');

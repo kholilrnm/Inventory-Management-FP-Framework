@@ -45,12 +45,21 @@
                           <input name="nama" type="text" placeholder="Masukan Nama" class="form-control" required="">
                         </div>
                       </div>
+
                       <div class="form-group row">
-                        <label class="col-md-3 form-control-label">Asal Barang</label>
-                        <div class="col-md-9">
-                          <input type="text" placeholder="Masukan Asal" name="asal" class="form-control" required="">
+                        <label class="col-md-3 form-control-label">Suppliers Barang</label>
+                        <div class="col-md-9 select mb-3">
+                          <select name="asal" class="form-control" >
+                            <option>PT. Atlas Megah</option>
+                            <option>PT. Adi Nusantara</option>
+                            <option>PT. Mas Giencue</option>
+                            <option>PT. Sak Onok E</option>
+                            <option>PT. Smart Techtex</option>
+                          </select>
                         </div>
                       </div>
+
+                     
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Jumlah Barang</label>
                         <div class="col-md-9">

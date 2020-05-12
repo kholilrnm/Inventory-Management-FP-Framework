@@ -72,6 +72,17 @@ class main extends CI_Model {
         else{
             return 0;
         }        
+    }    
+
+    function check_supplier() {
+        $this->db->select("*");
+        $getQuery = $this->db->get('suppliers');
+        if ($getQuery->num_rows() > 0) {
+            return $getQuery = $this->db->count_all_results('suppliers');
+        }
+        else{
+            return 0;
+        }
     }
 
     // end dashboard

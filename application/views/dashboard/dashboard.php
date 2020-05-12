@@ -40,7 +40,7 @@
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
                     <div class="text">
-                      <h6 class="mb-0">Suppliers</h6><span class="text-gray">5</span>
+                      <h6 class="mb-0">Suppliers</h6><span class="text-gray"><?= $suppliers  ?></span>
                     </div>
                   </div>
                   <div class="icon text-white bg-red"><i class="fas fa-receipt"></i></div>

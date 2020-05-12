@@ -40,6 +40,7 @@ class core extends CI_Controller {
 			'curr_stock' 			=> $this->main->hitung_currStock(), // current types stock
 			'new_stock' 			=> $this->main->new_stock(), // today stock (stock baru)
 			'out_stock' 			=> $this->main->out_stock(), // today stock (stock keluar)
+			'suppliers'				=> $this->main->check_supplier(),
 			'calc_mejaJanuari' 		=> $this->januari->calc_mejaJanuari($meja="Meja"),
 			'calc_mejaFebruari' 	=> $this->februari->calc_mejaFebruari($meja="Meja"),
 			'calc_mejaMaret' 		=> $this->maret->calc_mejaMaret($meja="Meja"),
@@ -180,6 +181,17 @@ class core extends CI_Controller {
 		$this->load->view('templates/header.php', $data);
 		$this->load->view('templates/sidebar.php');
 		$this->load->view('dashboard/stock.php');
+		$this->load->view('templates/footer.php');
+	}
+
+	public function suppliers()
+	{
+		$data = array(
+			'title' => "Suppliers"
+		);
+		$this->load->view('templates/header.php', $data);
+		$this->load->view('templates/sidebar.php');
+		$this->load->view('dashboard/suppliers.php');
 		$this->load->view('templates/footer.php');
 	}
 
