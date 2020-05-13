@@ -10,7 +10,7 @@
                   <div class="card-header">
                     <h6 class="text-uppercase mb-0">Suppliers Furniture</h6>
                   </div>
-                  <div class="card-body">                           
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">                           
                    <div class="row row-cols-1 row-cols-md-2">
 
                     <!-- PERTAMA -->

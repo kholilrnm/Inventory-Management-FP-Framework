@@ -75,7 +75,7 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Upload Foto</label>
                         <div class="col-md-9">
-                          <?= form_upload("uploadFoto", set_value("uploadFoto"), "class='form-control'", "required=''") ?>
+                          <input type="file" placeholder="Masukan Foto" name="uploadFoto" class="form-control" required="">
                         </div>
                       </div>
 

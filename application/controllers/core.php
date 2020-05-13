@@ -254,7 +254,7 @@ class core extends CI_Controller {
 		$namaBarang=$this->input->post('namaBarang');
 		$asalBarang=$this->input->post('asalBarang');
 		$jumlahBarang=$this->input->post('jumlahBarang');
-		$stock=$this->input->post('jumlahBarang');
+		$stock=$this->input->post('stock');
 
 
 		echo "$asalBarang";

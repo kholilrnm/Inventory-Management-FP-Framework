@@ -107,7 +107,7 @@
                   Swal.fire({
                     type: 'success',
                     title: 'Login Berhasil!',
-                    text: 'Selamat Datang ONI - CHAN :)',
+                    text: 'Yōkoso Oni Chan',
                     timer: 2000,
                     showCancelButton: false,
                     showConfirmButton: false

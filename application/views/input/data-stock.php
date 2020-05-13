@@ -10,7 +10,7 @@
                   <div class="card-header">
                     <h6 class="text-uppercase mb-0">History Barang Diambil</h6>
                   </div>
-                  <div class="card-body">                           
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">                           
                   <table class="table table-bordered table-striped" id="mydata">
                       <thead>
                         <tr align="center">
