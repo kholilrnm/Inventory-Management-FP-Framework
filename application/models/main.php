@@ -95,6 +95,13 @@ class main extends CI_Model {
         return $this->db->insert_id();
     }
 
+    function insertdatainvoice($data) {
+        // Param 1: nama table, param 2: data berupa assosiatif array
+        $this->db->insert("invoice", $data);
+        return $this->db->insert_id();
+    }
+
+
     function ambil_data() {
         return $this->db->get('stockbarang');
     }
@@ -105,7 +112,7 @@ class main extends CI_Model {
     }
 
     function show_barang(){
-        $hasil=$this->db->query("SELECT * FROM stockbarang");
+        $hasil=$this->db->query("SELECT * FROM stockbarang ORDER BY id DESC");
         return $hasil;
     }
     function edit_barang($namaBarang,$asalBarang,$jumlahBarang,$stock,$id){
@@ -119,7 +126,7 @@ class main extends CI_Model {
     }
 
     function show_out_stock(){
-        $hasil=$this->db->query("SELECT * FROM out_barang");
+        $hasil=$this->db->query("SELECT * FROM out_barang  ORDER BY id DESC");
         return $hasil;
     }
     function inserthistory($data)

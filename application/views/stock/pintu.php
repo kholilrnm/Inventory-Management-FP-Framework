@@ -12,7 +12,7 @@
                       <a href="../core/stock"><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Back</button></a></h6>
                     
                   </div>
-                  <div class="card-body">  
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">  
                                          
                      <table class="table table-bordered table-striped" id="mydata">
                       <thead>

@@ -36,6 +36,7 @@ class operasi extends CI_Controller {
         $this->form_validation->set_rules("jumlah", "jumlah", "required");
         $this->form_validation->set_rules("jumlah", "jumlah", "required");
         $this->form_validation->set_rules("tanggal", "tanggal", "required");
+         // $this->form_validation->set_rules("uploadFoto", "uploadFoto", "required");
         // $this->form_validation->set_rules("content", "Konten", "required");
 
 

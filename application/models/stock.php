@@ -50,4 +50,9 @@ class stock extends CI_Model{
         return $hasil;
     }
 
+    function invoice(){
+        $hasil=$this->db->query("SELECT * FROM invoice ORDER BY id DESC LIMIT 1");
+        return $hasil;
+    }
+
 }

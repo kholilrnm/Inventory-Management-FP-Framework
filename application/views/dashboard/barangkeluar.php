@@ -12,11 +12,12 @@
                       <a href="data_barang_keluar"><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">History</button></a></h6>
                     
                   </div>
-                  <div class="card-body">  
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">  
                                          
-                     <table class="table table-bordered table-striped" id="mydata">
+                     <table class="table table-bordered table-striped" id="mydata" >
                       <thead>
                         <tr align="center">
+                          <td>Id</td>
                           <td>Type Barang</td>
                           <td>Nama Barang</td>
                           <td>Total Barang</td>
@@ -42,6 +43,7 @@
                           ?>
 
                         <tr align="center">
+                          <td><?php echo $id ?></td>
                          <td><?php echo $tipeBarang ?></td>
                           <td><?php echo $namaBarang ?></td>
                           <td><?php echo $jumlahBarang ?></td>
@@ -68,6 +70,7 @@
                           $namaBarang=$i['namaBarang'];
                           $tanggalInput=$i['tanggalInput'];
                           $jumlahBarang=$i['jumlahBarang'];
+                          $stock=$i['stock'];
                           $asalBarang=$i['asalBarang'];
                           $uploadFoto=$i['uploadFoto']
         ?>
@@ -75,15 +78,14 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-
                   <h5 class="modal-title" id="exampleModalLabel">Ambil Barang</h5>
-
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'core/out'?>">
                     <div class="modal-body">
 
                       <div class="form-group">
+                            <label class="control-label col-xs-3" >Masukan Jumlah Barang yang Diambil</label>
                             <div class="col-xs-8" align="center">
                                 <input hidden="" name="id" value="<?php echo $id;?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
                                 <img  src="<?php echo base_url('uploads/'.$uploadFoto.'');?>" height="50px" width="50px">
@@ -91,7 +93,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-xs-3" >Tanggal Barang Keluar</label>
                             <div class="col-xs-8">
                                 <input name="tanggalInput" value="<?php echo date ("Y/m/d")  ?>" class="form-control" type="text" placeholder="Kode Barang..." readonly>
                             </div>
@@ -121,9 +122,7 @@
                         <div class="form-group">
                             <label class="control-label col-xs-3" >Jumlah Barang Diambil</label>
                             <div class="col-xs-8">
-
-                                <input name="ambil" min="0" max="<?php echo $jumlahBarang; ?>" class="form-control" max="<?php echo $stock;?>" type="number"  placeholder="Masukan Jumlah Barang" required>
-
+                                <input name="ambil" min="0"  class="form-control" max="<?php echo $stock;?>" type="number"  placeholder="Masukan Jumlah Barang" required>
                             </div>
                         </div>
 
@@ -139,12 +138,6 @@
             </div>
 
         <?php endforeach;?>
-
-          </div>
-        </div>
-      </div>
-    </section>
-</div>
 
 
 

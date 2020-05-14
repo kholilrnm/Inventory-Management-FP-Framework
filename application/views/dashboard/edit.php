@@ -10,10 +10,11 @@
                   <div class="card-header">
                     <h6 class="text-uppercase mb-0">History Input Furniture</h6>
                   </div>
-                  <div class="card-body">                           
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">                           
                   <table class="table table-bordered table-striped" id="mydata">
                       <thead>
                         <tr align="center">
+                          <td>Id</td>
                           <td>Type Barang</td>
                           <td>Nama Barang</td>
                           <td>Total Barang</td>
@@ -26,6 +27,7 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php  $nomer=0 ?>
                         <?php  
                        foreach($data->result_array() as $i):
 
@@ -40,6 +42,7 @@
                           ?>
 
                         <tr align="center">
+                          <td><?php echo $id ?></td>
                          <td><?php echo $tipeBarang ?></td>
                           <td><?php echo $namaBarang ?></td>
                           <td><?php echo $jumlahBarang ?></td>
@@ -71,6 +74,7 @@
                           $namaBarang=$i['namaBarang'];
                           $tanggalInput=$i['tanggalInput'];
                           $jumlahBarang=$i['jumlahBarang'];
+                          $stock=$i['stock'];
                           $asalBarang=$i['asalBarang'];
                           $uploadFoto=$i['uploadFoto']
         ?>
@@ -78,13 +82,9 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                   <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-=======
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
-=======
->>>>>>> 10cd265bfb8fb86d5b2731b7f3307109121be4a4
+
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo base_url().'core/newsave'?>">
@@ -123,6 +123,13 @@
                             <label class="control-label col-xs-3" >Jumlah Barang</label>
                             <div class="col-xs-8">
                                 <input name="jumlahBarang" value="<?php echo $jumlahBarang;?>" class="form-control" type="text" placeholder="Harga..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" >Sisa Stock</label>
+                            <div class="col-xs-8">
+                                <input name="stock" value="<?php echo $stock;?>" class="form-control" type="text" placeholder="Harga..." required>
                             </div>
                         </div>
 

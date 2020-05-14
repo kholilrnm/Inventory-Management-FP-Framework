@@ -10,11 +10,11 @@
                   <div class="card-header">
                     <h6 class="text-uppercase mb-0">History Input Furniture</h6>
                   </div>
-                  <div class="card-body">                           
-                    <table class="table table-striped table-hover card-text">
+                  <div class="card-body" style="padding:10px; overflow:auto; width:100%; height:450px;">                           
+                    <table class="table table-striped table-striped card-text" align="text-center">
                       <thead align="text-center">
                         <tr>
-                        
+                           <th>No</th>
                           <th>Type Barang</th>
                           <th>Nama Barang</th>
                           <th>Asal Barang</th>
@@ -23,10 +23,14 @@
                           <th>Tanggal Input</th>
                           <th>Photo</th>
                         </tr>
-                        <?php foreach($data as $u){ ?>
+                        <?php  $nomer=0 ?>
+                        <?php foreach($data as $u){
+                          $nomer++;
+                         ?>
                       </thead>
                       <tbody>
                         <tr>
+                          <td><?=$nomer?></td>
                           <td><?php echo $u->tipeBarang ?></td>
                           <td><?php echo $u->namaBarang ?></td>
                           <td><?php echo $u->asalBarang ?></td>
