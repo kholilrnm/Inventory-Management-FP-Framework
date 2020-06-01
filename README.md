@@ -15,3 +15,9 @@ Proyek Kuliah UAS Framework 2020
 | Back-End | CodeIgniter 3 |
 | Web Server | Localhost or Hosting |
 | Front-End | Javascript, Chart Js, Bootstrap 4 |
+
+## Demo 
+<br>
+<p align="center">
+        <img src="/images/web1.jpg" width="238" height="414">
+</p>
