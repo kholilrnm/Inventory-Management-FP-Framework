@@ -46,3 +46,7 @@ Proyek Kuliah UAS Framework 2020
 <p align="center">
         <img src="/images/web6.jpg" width="414" height="238">
 </p>
+<br>
+<p align="center">
+        <img src="/images/web7.jpg" width="414" height="238">
+</p>
