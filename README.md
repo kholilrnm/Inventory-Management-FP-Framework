@@ -6,7 +6,7 @@
 - Kirim pull request jika ingin berkontribusi dalam project ini
 - Kirim Issues, Jika ada permasalahan pada project ini
 
-## Final Projext
+## Final Projext - Sistem Pergudangan
 Proyek Kuliah UAS Framework 2020
 
 ## Tools / Framework
@@ -15,6 +15,11 @@ Proyek Kuliah UAS Framework 2020
 | Back-End | CodeIgniter 3 |
 | Web Server | Localhost or Hosting |
 | Front-End | Javascript, Chart Js, Bootstrap 4 |
+
+## Features
+| Fitur | Keterangan |
+| --- | --- |
+| Login | Autentikasi Login As Admin |
 
 ## Demo 
 <br>
