@@ -8,3 +8,10 @@
 
 ## Final Projext
 Proyek Kuliah UAS Framework 2020
+
+## Tools / Framework
+| Bagian | Tools yang digunakan |
+| --- | --- |
+| Back-End | CodeIgniter 3 |
+| Web Server | Localhost or Hosting |
+| Front-End | Javascript, Chart Js, Bootstrap 4 |
