@@ -7,7 +7,7 @@
 - Kirim pull request jika ingin berkontribusi dalam project ini
 - Kirim Issues, Jika ada permasalahan pada project ini
 
-## Final Projext - Sistem Pergudangan
+## Final Project - Sistem Pergudangan
 Proyek Kuliah UAS Framework 2020
 
 ## Tools / Framework
