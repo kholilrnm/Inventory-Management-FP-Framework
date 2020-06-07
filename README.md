@@ -21,7 +21,7 @@ Proyek akhir kuliah - Sistem Pergudangan
 | Fitur | Keterangan |
 | --- | --- |
 | Login | Autentikasi Login As Admin |
-| Dashboard | Friendly Inteface Dashboard |
+| Dashboard | Friendly Interface Dashboard |
 | Statistik Stock | Grafik Data Stock |
 | Input Stock | Memasukkan jumlah barang |
 | Update Stock | Mengedit barang |
