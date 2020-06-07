@@ -63,3 +63,7 @@ Proyek Kuliah UAS Framework 2020
 <p align="center">
         <img src="/images/web10.jpg" width="414" height="238">
 </p>
+
+## Contributors
+- Rama Andika Jorgie (17081010055)
+- Kholilul Rachman N.M (17081010055) 
