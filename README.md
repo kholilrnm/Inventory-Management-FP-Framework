@@ -7,8 +7,8 @@
 - Kirim pull request jika ingin berkontribusi dalam project ini
 - Kirim Issues, Jika ada permasalahan pada project ini
 
-## Final Project - Sistem Pergudangan
-Proyek Kuliah UAS Framework 2020
+## Final Project - Framework
+Proyek akhir kuliah - Sistem Pergudangan
 
 ## Tools / Framework
 | Bagian | Tools yang digunakan |
@@ -21,6 +21,17 @@ Proyek Kuliah UAS Framework 2020
 | Fitur | Keterangan |
 | --- | --- |
 | Login | Autentikasi Login As Admin |
+| Dashboard | Friendly Inteface Dashboard |
+| Statistik Stock | Grafik Data Stock |
+| Input Stock | Memasukkan jumlah barang |
+| Update Stock | Mengedit barang |
+| Delete Stock | Menghapus barang |
+| View Stock | Melihat barang |
+| Management Suppliers | Mengontrol Suppliers |
+| Invoice | Membuat Invoice Pesan Barang |
+| Total Current Stock | Barang keseluruhan hari ini |
+| Total Out Stock | Barang keluar hari ini |
+| Total New Stock | Barang masuk hari ini |
 
 ## Demo 
 <br>
@@ -65,5 +76,5 @@ Proyek Kuliah UAS Framework 2020
 </p>
 
 ## Contributors
-- Rama Andika Jorgie (17081010055)
-- Kholilul Rachman N.M (17081010055) 
+- <a href="https://github.com/GieGoodBoy">Rama Andika Jorgie (17081010055)</a>
+- <a href="https://github.com/kholilboy">Kholilul Rachman N.M (17081010055)</a>
