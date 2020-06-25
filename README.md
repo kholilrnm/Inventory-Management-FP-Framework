@@ -76,5 +76,5 @@ Proyek akhir kuliah - Sistem Pergudangan
 </p>
 
 ## Contributors
-- <a href="https://github.com/GieGoodBoy">Rama Andika Jorgie (17081010055)</a>
+- <a href="https://github.com/RamaDjorgie">Rama Andika Jorgie (17081010055)</a>
 - <a href="https://github.com/kholilboy">Kholilul Rachman N.M (17081010055)</a>
